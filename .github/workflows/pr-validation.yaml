@@ -1,0 +1,34 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install htmlhint stylelint
+
+      - name: Lint HTML
+        run: npx htmlhint src/**/*.html --rules tagname-lowercase,attr-lowercase,alt-require,id-unique,tag-pair
+
+      - name: Lint CSS
+        run: npx stylelint "styles/**/*.css" --config-based-rules declaration-block-no-duplicate-properties,no-duplicate-selectors,property-case,value-keyword-case,selector-type-case,block-no-empty
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install parcel
+
+      - name: Build Website
+        run: npx parcel build src/index.html

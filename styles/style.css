@@ -1,5 +1,5 @@
-/* Reset some default browser styles */
-body, h1, p, ul {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,58 +8,126 @@ body, h1, p, ul {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
     color: #333;
-    padding: 0 20px;
+    background-color: #f4f4f4;
 }
 
-/* Header styles */
 header {
-    background: #333;
-    color: #fff;
+    background-color: #333;
+    color: white;
     padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
     text-align: center;
 }
 
-header ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-header ul li {
+header nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
-header ul li a {
-    color: #fff;
+header nav ul li a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-header ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Main content styles */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-main h1 {
-    color: #444;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-/* Footer styles */
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    margin-top: 20px;
+    padding: 10px 0;
+}
+
+/* Home Page Styling */
+.hero {
+    background-color: #0044cc;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features {
+    padding: 20px;
+    text-align: center;
+}
+
+.blog-preview {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.blog-post {
+    background-color: white;
+    padding: 20px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+    color: #333;
+}
+
+.blog-post a {
+    text-decoration: none;
+    color: #0044cc;
+}
+
+/* Blog Page Styling */
+.blog-post-detail {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.author {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Contact Page Styling */
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
     padding: 10px;
-    background: #333;
-    color: #fff;
-    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background-color: #0033aa;
 }

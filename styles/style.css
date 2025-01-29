@@ -131,3 +131,10 @@ footer {
 .contact-form button:hover {
     background-color: #0033aa;
 }
+npx stylelint "styles/**/*.css" \
+  --rule "declaration-block-no-duplicate-properties:true" \
+  --rule "no-duplicate-selectors:true" \
+  --rule "property-case:lower" \
+  --rule "value-keyword-case:lower" \
+  --rule "selector-type-case:lower" \
+  --rule "block-no-empty:true"
